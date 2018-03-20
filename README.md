@@ -1,7 +1,7 @@
 
 # HoloXR
 <p align="center">
-  <img width="460" height="300" src="https://github.com/TebogoNakampe/HoloXR/HoloXR_Master/imgs/obama.jpg">
+  <img width="460" height="300" src="https://github.com/TebogoNakampe/HoloXR/blob/master/HoloXR_Master/imgs/obama.jpg">
 </p>
                                           https://www.abi-ai.com 
 Basic desktop application to play around with filters like hat, moustache and glasses automatic in-face superposition in real time.
