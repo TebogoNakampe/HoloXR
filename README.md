@@ -1,10 +1,12 @@
+
 # HoloXR
-OpenCV and Dlib
-# HoloXR
+<p align="center">
+  <img width="460" height="300" src="https://github.com/TebogoNakampe/HoloXR/tree/master/HoloXR_Master/imgs/obama.jpg">
+</p>
+
 Basic desktop application to play around with filters like hat, moustache and glasses automatic in-face superposition in real time.
 
 ![alt text][s1] ![alt text][s11]
-
 
 It uses [Haar features](https://en.wikipedia.org/wiki/Haar-like_features) and the [Viola–Jones object detection framework
 ](https://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework) implemented in OpenCV to detect mainly faces positions and inside the faces, eyes and mouth position. It uses then this information to add different accessories to the faces (hat, moustache, etc).
