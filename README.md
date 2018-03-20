@@ -1,12 +1,10 @@
 
 # HoloXR
 <p align="center">
-  <img width="460" height="300" src="https://github.com/TebogoNakampe/HoloXR/tree/master/HoloXR_Master/imgs/obama.jpg">
+  <img width="460" height="300" src="https://github.com/TebogoNakampe/HoloXR/HoloXR_Master/imgs/obama.jpg">
 </p>
-
+                                          https://www.abi-ai.com 
 Basic desktop application to play around with filters like hat, moustache and glasses automatic in-face superposition in real time.
-
-![alt text][s1] ![alt text][s11]
 
 It uses [Haar features](https://en.wikipedia.org/wiki/Haar-like_features) and the [Viola–Jones object detection framework
 ](https://en.wikipedia.org/wiki/Viola%E2%80%93Jones_object_detection_framework) implemented in OpenCV to detect mainly faces positions and inside the faces, eyes and mouth position. It uses then this information to add different accessories to the faces (hat, moustache, etc).
@@ -18,7 +16,9 @@ The Dlib implementation of this app uses a [Histogram of Oriented Gradients (HOG
 
 ## Requirements
 * OpenCV 3.0+ with python bindings
-* Python 2.7
+* mkl
+* pydaal
+* Python 3.6
      * pillow
      * numpy
      * tkinter
@@ -49,8 +49,6 @@ Finally just `pip install it` with: `pip install dlib`
 #### HaarClassifiers
 The algorithm give us the rectangles where faces might be as it can be seen in the next picture. After that, specialized HaarClassifiers are used to find mouths, noses, and eyes inside the image recognized as a face. With that information it is relatively easy to put the different "gadgets" in superposition with the image. We just use the alpha channel (transparency) of the "accessories" to merge the images.
 
-![alt text][s4]
-
 To recreate this in real time with your WebCam just execute
 
 ```
@@ -59,13 +57,9 @@ python facial_features.py
 
 
 #### Dlib face and landmarks detection
-HarrCascades technique is very old, so detection is often not so good when the faces are slightly bent for example. It is not possible to estimate the inclination of the head for example. Detection of face characteristics (eyes, nose, mouth, eyebrows, etc) is also not robust with HaarClassifiers. Here comes into play more recent techniques implemented in the dlib library. If you compare the to detection schemes the dlib is more accurate and stable. As described, we can also get the main facial landmarks which are used to detect the face characteristics and to estimate the tilt angle of the face. That can be seen in the next picture.
-
-![alt text][s5]
+HarrCascades technique is very old, so detection is often not so good when the faces are slightly bent for example. It is not possible to estimate the inclination of the head for example. Detection of face characteristics (eyes, nose, mouth, eyebrows, etc) is also not robust with HaarClassifiers. Here comes into play more recent techniques implemented in the dlib library. If you compare the to detection schemes the dlib is more accurate and stable. As described, we can also get the main facial landmarks which are used to detect the face characteristics and to estimate the tilt angle of the face. 
 
 The 68 facial landmarks are numbered in the following form. With tha points we calculate the inclination so the "accessories" are also bent. Wth the points of the mouth can be detected when the mouth is open and then display some trick, like a rainbow coming out.
-
-![alt text][s6]
 
 To recreate this in real time with your WebCam just execute
 
@@ -77,7 +71,7 @@ python facial_landmarks.py
 In Windows just double click de file `main.py` or execute in the console the following to run the HaarCascade version app (opencv)
 
 ```
-python main.py
+python holoD.py
 ```
 
 To use the dlib version with more interesting features run
@@ -88,10 +82,4 @@ python main_dlib.py
 
 ## Comparison between OpenCv HaarCascade Classifiers and Dlib algorithms
 Here can be compared the performance in real time of the two techniques. As seen the opencv with HaarCascade  implementation is not so "stable" (i.e the hat moves a lot although the face is still). Also with the dlib version more fun things can be made and the accessories inclines with us.
-
-### OpenCV
-![alt text][s3]
-### Dlib
-![alt text][s2]
-
 
